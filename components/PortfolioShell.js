@@ -48,7 +48,13 @@ export default function PortfolioShell({
         showArtistNames={!artist}
       />
 
-      <main className="ml-80 lg:ml-96 min-h-[calc(100vh-3.5rem)] py-6 sm:py-10">
+      <main
+        className={`ml-80 lg:ml-96 ${
+          selectedTrack
+            ? "min-h-[calc(100vh-3.5rem)] py-6 sm:py-10"
+            : "h-[calc(100vh-3.5rem)] py-0 overflow-hidden"
+        }`}
+      >
         {selectedTrack ? (
           <MainPanel
             site={site}
