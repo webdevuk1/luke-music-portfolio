@@ -1,0 +1,68 @@
+/** Demo catalogue — swap URLs and copy for Luke's real pieces. */
+export const DEMO_TRACKS = [
+  {
+    id: "care",
+    title: "Care",
+    subtitle: "Boogie Type Beat",
+    genre: "Hip Hop",
+    bpm: 120,
+    mood: "Energetic",
+    badge: "Demo",
+    about:
+      "A warm, bounce-heavy sketch built for vocal hooks. Written as a reference for collaborators — drums sit back enough for a lead to breathe.",
+    audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+    accent: "from-red-600 to-orange-800",
+  },
+  {
+    id: "her-place",
+    title: "Her Place",
+    subtitle: "Soulful Instrumental",
+    genre: "R&B",
+    bpm: 92,
+    mood: "Late night",
+    badge: "Demo",
+    about:
+      "Muted keys and a slow groove — meant to feel like a room with the lights low. Good for showing melodic writing without a full mix.",
+    audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+    accent: "from-rose-700 to-red-950",
+  },
+  {
+    id: "midnight-run",
+    title: "Midnight Run",
+    subtitle: "Synthwave Sketch",
+    genre: "Electronic",
+    bpm: 110,
+    mood: "Driving",
+    badge: "WIP",
+    about:
+      "Pulsing bass and arpeggios — a work-in-progress cue for film or game pitches. Structure is loop-ready for A&R listens.",
+    audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
+    accent: "from-neutral-600 to-stone-900",
+  },
+  {
+    id: "open-road",
+    title: "Open Road",
+    subtitle: "Acoustic Demo",
+    genre: "Folk",
+    bpm: 84,
+    mood: "Hopeful",
+    badge: "Demo",
+    about:
+      "Fingerpicked guitar and a simple motif — shows songwriting before production. Recorded live in one take for honesty.",
+    audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
+    accent: "from-amber-700 to-orange-950",
+  },
+  {
+    id: "pressure",
+    title: "Pressure",
+    subtitle: "Trap Instrumental",
+    genre: "Hip Hop",
+    bpm: 140,
+    mood: "Aggressive",
+    badge: "Demo",
+    about:
+      "Hard-hitting drums and a minimal motif — built for artists who want space up top. Mix is intentionally dry for clarity.",
+    audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
+    accent: "from-red-700 to-red-950",
+  },
+];
