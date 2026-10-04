@@ -16,6 +16,7 @@ export default function DemoLibrarySidebar({
   recentIds,
   onGoHome,
   storeName,
+  showArtistNames = false,
 }) {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeTab, setActiveTab] = useState("all");
@@ -46,7 +47,8 @@ export default function DemoLibrarySidebar({
         t.title.toLowerCase().includes(q) ||
         t.subtitle.toLowerCase().includes(q) ||
         t.genre.toLowerCase().includes(q) ||
-        t.mood.toLowerCase().includes(q)
+        t.mood.toLowerCase().includes(q) ||
+        (t.artistName ?? "").toLowerCase().includes(q)
     );
   }, [tracks, activeTab, favorites, recentIds, searchQuery, genreFilter]);
 
@@ -142,6 +144,7 @@ export default function DemoLibrarySidebar({
               isFavorite={favorites.has(track.id)}
               onSelect={onSelect}
               onToggleFavorite={onToggleFavorite}
+              showArtistName={showArtistNames}
             />
           ))
         )}

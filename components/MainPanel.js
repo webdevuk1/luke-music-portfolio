@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 export default function MainPanel({ site, track, onClearSelection }) {
@@ -65,6 +66,14 @@ export default function MainPanel({ site, track, onClearSelection }) {
             )}
           </div>
           <h1 className="mt-2 text-4xl sm:text-5xl font-display text-white uppercase">{track.title}</h1>
+          {track.artistName && track.artistSlug && (
+            <Link
+              href={`/artist/${track.artistSlug}`}
+              className="inline-block mt-2 text-sm text-primary-400 hover:text-primary-300"
+            >
+              by {track.artistName}
+            </Link>
+          )}
 
           <dl className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3 text-left">
             <div className="rounded-lg bg-ink-raised border border-ink-border px-3 py-2">
@@ -101,7 +110,7 @@ export default function MainPanel({ site, track, onClearSelection }) {
             }}
           />
 
-          <div className="mt-10 flex flex-col sm:flex-row items-center gap-4">
+          <div className="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
             <button
               type="button"
               onClick={togglePlay}
@@ -123,7 +132,18 @@ export default function MainPanel({ site, track, onClearSelection }) {
                 </>
               )}
             </button>
-            <div className="flex-1 w-full h-1.5 rounded-full bg-ink-raised overflow-hidden ring-1 ring-ink-border">
+            {track.downloadable && track.downloadUrl && (
+              <a
+                href={track.downloadUrl}
+                download={`${track.title.replace(/\s+/g, "-")}.mp3`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-lg border border-ink-border bg-ink-raised hover:border-primary-600 text-white font-semibold uppercase tracking-wide text-sm px-6 py-3 transition-colors min-w-[160px]"
+              >
+                Download
+              </a>
+            )}
+            <div className="flex-1 w-full h-1.5 rounded-full bg-ink-raised overflow-hidden ring-1 ring-ink-border min-w-[120px]">
               <div
                 className="h-full bg-primary-500 transition-all duration-150"
                 style={{ width: `${progress}%` }}

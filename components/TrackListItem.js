@@ -4,6 +4,7 @@ export default function TrackListItem({
   isFavorite,
   onSelect,
   onToggleFavorite,
+  showArtistName = false,
 }) {
   return (
     <div
@@ -38,6 +39,9 @@ export default function TrackListItem({
             </span>
           </div>
           <p className="text-xs text-ink-muted truncate">{track.subtitle}</p>
+          {showArtistName && track.artistName && (
+            <p className="text-[11px] text-primary-400/90 truncate mt-0.5">{track.artistName}</p>
+          )}
           <p className="text-[11px] text-ink-subtle mt-1 truncate">
             {track.genre} · {track.bpm} BPM · {track.mood}
           </p>
